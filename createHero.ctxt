@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=createHero
+comment1.params=
+comment1.target=void\ newHero()
+comment2.params=
+comment2.target=void\ sexoDoPersonagem()
+comment3.params=
+comment3.target=void\ nomeDoPersonagem()
+comment4.params=
+comment4.target=java.lang.String\ getNome()
+comment5.params=
+comment5.target=void\ classeDoPersonagem()
+comment6.params=
+comment6.target=void\ atributos()
+comment7.params=
+comment7.target=java.lang.String[]\ getStatus()
+comment8.params=
+comment8.target=void\ lvlUp()
+numComments=9
