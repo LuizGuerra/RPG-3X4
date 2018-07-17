@@ -2,24 +2,48 @@ import java.util.Scanner;
 import java.util.Random;
 public class createHero{
     String sexo, nome, classe;
-    int ataque, defesa, velocidade, destreza, vitalidade, sabedoria, carisma, percepcao;
+    int ataque, defesa, velocidade, destreza, vitalidade, sabedoria, carisma, percepcao, vida;
     public void newHero(){
         // setHero hero = new setHero(sexO, nomE, classE);
     }
     public void sexoDoPersonagem(){
         Scanner in = new Scanner(System.in);
         
-        System.out.print("Você é um homem ou mulher? [respostas possíveis: homem/mulher]: ");
+        System.out.print("Você é um homem ou mulher? [respostas possíveis: homem/mulher ou h/m]: ");
         String sexoDP = in.next();
         sexoDP=sexoDP.toLowerCase();
-        while(!"homem".equals(sexoDP) && !"mulher".equals(sexoDP)){
+        while(!"homem".equals(sexoDP) && !"mulher".equals(sexoDP) && !"h".equals(sexoDP) && !"n".equals(sexoDP)){
             System.out.println();
             System.out.println("Desculpa, eu não consegui entender. Pode responder novamente, por favor?");
             System.out.print("[respostas possíveis: homem/mulher]: ");
             sexoDP = in.next(); sexoDP=sexoDP.toLowerCase();
         }
+        if(sexoDP.equals("h")){
+            sexoDP="homem";
+        }
+        if(sexoDP.equals("m")){
+            sexoDP="mulher";
+        }
         this.sexo=sexoDP;
         System.out.println();
+    }
+    public String sr(){
+        if(sexo.equals("homem")){
+            return "senhor";
+        }
+        return "senhora";
+    }
+    public String sexo_o(){
+        if(sexo.equals("homem")){
+            return "o";
+        }
+        return "a";
+    }
+    public String sexo_heroi(){
+        if(sexo.equals("homem")){
+            return "herói";
+        }
+        return "heroína";
     }
     public void nomeDoPersonagem(){
         Scanner in = new Scanner(System.in);
@@ -28,15 +52,15 @@ public class createHero{
         System.out.print("Mais pra frente não será possível! ");
         String nomeDP = in.nextLine();
         String areyousure="nao";
-        while (areyousure.equals("nao")){
-            System.out.print("\nVocê tem certeza que deseja esse nome? [respostas possíveis: sim/nao] ");
+        while (areyousure.equals("nao")||areyousure.equals("n")){
+            System.out.print("\nVocê tem certeza que deseja esse nome? [respostas possíveis: sim/nao ou s/n] ");
             areyousure=in.next();
             areyousure=areyousure.toLowerCase();
-            if(areyousure.equals("nao")){
+            if(areyousure.equals("nao")||areyousure.equals("n")){
                 System.out.print("Diga o nome do herói: ");
                 nomeDP = in.nextLine(); nomeDP = in.nextLine();
             }
-            while(!"sim".equals(areyousure) && !"nao".equals(areyousure)){
+            while(!"sim".equals(areyousure) && !"nao".equals(areyousure) && !"s".equals(areyousure) && !"n".equals(areyousure)){
                 System.out.print("Desculpa, eu não consegui entender! Responda sim ou nao, por favor! ");
                 areyousure=in.next();
                 areyousure=areyousure.toLowerCase();
@@ -64,9 +88,12 @@ public class createHero{
         this.classe=classE;
         atributos();
     }
+    public String getClasse(){
+        return classe;
+    }
     private void atributos(){
         Random rand = new Random();
-        int ataque, defesa, velocidade, destreza, vitalidade, sabedoria, carisma, percepcao;
+        int ataque, defesa, velocidade, destreza, vitalidade, sabedoria, carisma, percepcao, vida=10;
         if(classe.equals("arqueiro")){
             ataque=rand.nextInt(5);
             if(ataque>3){
@@ -123,6 +150,7 @@ public class createHero{
         this.sabedoria=sabedoria;
         this.carisma=carisma;
         this.percepcao=percepcao;
+        this.vida=vida;
     }
     public String [] getStatus(){
         String [] stats = new String [8];
@@ -140,16 +168,31 @@ public class createHero{
         }
         return stats;
     }
+    public String vidaDP(){
+        return "Vida total: "+vida;
+    }
     public void lvlUp(){
         Random rand = new Random();
         
         ataque=ataque+rand.nextInt(2)+1;
+        if(ataque>30){ataque=30;}
         defesa=defesa+rand.nextInt(2)+1;
+        if(defesa>30){defesa=30;}
         velocidade=velocidade+rand.nextInt(2)+1;
         destreza=destreza+rand.nextInt(2)+1;
+        if(destreza>30){destreza=30;}
         vitalidade=vitalidade+rand.nextInt(2)+1;
+        if(vitalidade>20){vitalidade=20;}
         sabedoria=sabedoria+rand.nextInt(2)+1;
+        if(sabedoria>30){sabedoria=30;}
         carisma=carisma+rand.nextInt(2)+1;
+        if(carisma>20){carisma=20;}
         percepcao=percepcao+rand.nextInt(2)+1;
+        if(percepcao>30){percepcao=30;}
+        switch (classe){
+            case "guerreiro": vida=vida+rand.nextInt(2)+2;
+            case "mago": vida=vida+rand.nextInt(2)+1;
+            case "arqueiro": vida=vida+rand.nextInt(2)+1;
+        }
     }
 }

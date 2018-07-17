@@ -1,12 +1,10 @@
-----------------------------------------------------------------------------
-Este é o arquivo README do projeto. Você deve descrever aqui o seu projeto.
-Informe ao usuário (alguém que não sabe nada sobre este projeto!) tudo que
-ele/ela precisa saber. Os comentários devem incluir, pelo menos:
+﻿----------------------------------------------------------------------------
+Esse é um RPG simples, de mapa 3X4, usado pra treinar, somente. Espero que
+o jogo se torne algo divertido para você, usuário.
 ------------------------------------------------------------------------
 
-TITULO DO PROJETO:
-OBJETIVO DO PROJETO:
-VERSÃO ou DATA:
-COMO INICIAR O PROJETO:
-AUTORES:
-INSTRUÇÕES PARA O USUÁRIO:
+TITULO DO PROJETO: QUICK RPG
+OBJETIVO DO PROJETO: Treino e aprendizado
+VERSÃO: 0.1
+COMO INICIAR O PROJETO: Uhh, executa em java, é um RPG em texto
+AUTORES: Luiz Pedro Franciscatto Guerra

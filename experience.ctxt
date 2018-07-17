@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=experience
+comment1.params=
+comment1.target=boolean\ killMonster()
+comment2.params=
+comment2.target=int\ getLvl()
+comment3.params=
+comment3.target=int\ getExp()
+numComments=4

@@ -4,4 +4,6 @@ comment1.params=args
 comment1.target=void\ main(java.lang.String[])
 comment2.params=
 comment2.target=void\ titulo()
-numComments=3
+comment3.params=nHero
+comment3.target=void\ ficha(createHero)
+numComments=4
