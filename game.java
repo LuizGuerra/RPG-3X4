@@ -21,8 +21,11 @@ public class game{
         
         primeiraH.partOne(nHero, kill);
         
-        System.out.print("\f");
-        ficha(nHero);
+        nHero.lvlUp();
+        if(nHero.getVida()>0){
+            System.out.print("\f");
+            ficha(nHero);
+        }
     }
     public static void titulo(){
         System.out.println("\f============================================================================\n\n\n");
@@ -32,11 +35,13 @@ public class game{
         System.out.println("\n\n\n============================================================================\n\n\n");
     }
     public static void ficha(createHero nHero){
+        experience batata = new experience();
         System.out.println("============================================================================");
         System.out.println("============================================================================");
         System.out.println("Ficha do jogador:\n");
         System.out.println("Nome d"+nHero.sexo_o()+" "+nHero.sexo_heroi()+": "+nHero.getNome());
-        System.out.println("Classe escolhida: "+nHero.getClasse()+"\n");
+        System.out.println("Classe escolhida: "+nHero.getClasse());
+        System.out.println("Nível: "+batata.getLvl()+"\n");
         for(int i=0; i<7; i++){
             System.out.println(nHero.getStatus()[i]);
         }

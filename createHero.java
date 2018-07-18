@@ -93,7 +93,7 @@ public class createHero{
     }
     private void atributos(){
         Random rand = new Random();
-        int ataque, defesa, velocidade, destreza, vitalidade, sabedoria, carisma, percepcao, vida=10;
+        int ataque, defesa, velocidade, destreza, vitalidade, sabedoria, carisma, percepcao, vida=15;
         if(classe.equals("arqueiro")){
             ataque=rand.nextInt(5);
             if(ataque>3){
@@ -202,9 +202,9 @@ public class createHero{
         percepcao=percepcao+rand.nextInt(2)+1;
         if(percepcao>30){percepcao=30;}
         switch (classe){
-            case "guerreiro": vida=vida+rand.nextInt(2)+2;
-            case "mago": vida=vida+rand.nextInt(2)+1;
-            case "arqueiro": vida=vida+rand.nextInt(2)+1;
+            case "guerreiro": vida=vida+rand.nextInt(6)+2;
+            case "mago": vida=vida+rand.nextInt(3)+2;
+            case "arqueiro": vida=vida+rand.nextInt(4)+2;
         }
     }
     public void addAtaque(int x){
