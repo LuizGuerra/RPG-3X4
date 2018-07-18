@@ -37,7 +37,7 @@ public class game{
         System.out.println("Ficha do jogador:\n");
         System.out.println("Nome d"+nHero.sexo_o()+" "+nHero.sexo_heroi()+": "+nHero.getNome());
         System.out.println("Classe escolhida: "+nHero.getClasse()+"\n");
-        for(int i=0; i<8; i++){
+        for(int i=0; i<7; i++){
             System.out.println(nHero.getStatus()[i]);
         }
         System.out.println(nHero.vidaDP());
