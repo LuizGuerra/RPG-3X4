@@ -2,7 +2,7 @@ import java.util.Scanner;
 import java.util.Random;
 public class createHero{
     String sexo, nome, classe;
-    int ataque, defesa, velocidade, destreza, vitalidade, sabedoria, carisma, percepcao, vida;
+    int ataque, defesa, destreza, vitalidade, sabedoria, carisma, percepcao, vida;
     public void newHero(){
         // setHero hero = new setHero(sexO, nomE, classE);
     }
@@ -12,7 +12,7 @@ public class createHero{
         System.out.print("Você é um homem ou mulher? [respostas possíveis: homem/mulher ou h/m]: ");
         String sexoDP = in.next();
         sexoDP=sexoDP.toLowerCase();
-        while(!"homem".equals(sexoDP) && !"mulher".equals(sexoDP) && !"h".equals(sexoDP) && !"n".equals(sexoDP)){
+        while(!"homem".equals(sexoDP) && !"mulher".equals(sexoDP) && !"h".equals(sexoDP) && !"m".equals(sexoDP)){
             System.out.println();
             System.out.println("Desculpa, eu não consegui entender. Pode responder novamente, por favor?");
             System.out.print("[respostas possíveis: homem/mulher]: ");
@@ -100,7 +100,6 @@ public class createHero{
                 ataque=ataque-1;
             }
             defesa=rand.nextInt(5)+1;
-            velocidade=rand.nextInt(5)+1;
             destreza=rand.nextInt(5)+1;
             vitalidade=rand.nextInt(5);
             if(vitalidade>3){
@@ -113,7 +112,6 @@ public class createHero{
         else if(classe.equals("mago")){
             ataque=rand.nextInt(5)+1;
             defesa=rand.nextInt(5)+1;
-            velocidade=rand.nextInt(5)+1;
             destreza=rand.nextInt(5)+1;
             vitalidade=rand.nextInt(5);
             if(vitalidade>3){
@@ -132,7 +130,6 @@ public class createHero{
             if(defesa<2){
                 defesa=defesa+1;
             }
-            velocidade=rand.nextInt(5)+1;
             destreza=rand.nextInt(5)+1;
             vitalidade=rand.nextInt(5)+1;
             if(vitalidade<=2){
@@ -144,7 +141,6 @@ public class createHero{
         }
         this.ataque=ataque;
         this.defesa=defesa;
-        this.velocidade=velocidade;
         this.destreza=destreza;
         this.vitalidade=vitalidade;
         this.sabedoria=sabedoria;
@@ -153,23 +149,40 @@ public class createHero{
         this.vida=vida;
     }
     public String [] getStatus(){
-        String [] stats = new String [8];
-        for(int i=0; i<8; i++){
+        String [] stats = new String [7];
+        for(int i=0; i<7; i++){
             switch(i){
                 case 0: stats[i]="Ataque: "+ataque; break;
                 case 1: stats[i]="Defesa: "+defesa; break;
-                case 2: stats[i]="Velocidade: "+velocidade; break;
-                case 3: stats[i]="Destreza: "+destreza; break;
-                case 4: stats[i]="Vitalidade: "+vitalidade; break;
-                case 5: stats[i]="Sabedoria: "+sabedoria; break;
-                case 6: stats[i]="Carisma: "+carisma; break;
-                case 7: stats[i]="Percepção: "+percepcao; break;
+                case 2: stats[i]="Destreza: "+destreza; break;
+                case 3: stats[i]="Vitalidade: "+vitalidade; break;
+                case 4: stats[i]="Sabedoria: "+sabedoria; break;
+                case 5: stats[i]="Carisma: "+carisma; break;
+                case 6: stats[i]="Percepção: "+percepcao; break;
+            }
+        }
+        return stats;
+    }
+    public int [] getIntStatus(){
+        int [] stats = new int [7];
+        for(int i=0; i<7; i++){
+            switch(i){
+                case 0: stats[i]= ataque; break;
+                case 1: stats[i]= defesa; break;
+                case 2: stats[i]= destreza; break;
+                case 3: stats[i]= vitalidade; break;
+                case 4: stats[i]= sabedoria; break;
+                case 5: stats[i]= carisma; break;
+                case 6: stats[i]= percepcao; break;
             }
         }
         return stats;
     }
     public String vidaDP(){
         return "Vida total: "+vida;
+    }
+    public int getVida(){
+        return vida;
     }
     public void lvlUp(){
         Random rand = new Random();
@@ -178,7 +191,6 @@ public class createHero{
         if(ataque>30){ataque=30;}
         defesa=defesa+rand.nextInt(2)+1;
         if(defesa>30){defesa=30;}
-        velocidade=velocidade+rand.nextInt(2)+1;
         destreza=destreza+rand.nextInt(2)+1;
         if(destreza>30){destreza=30;}
         vitalidade=vitalidade+rand.nextInt(2)+1;
@@ -194,5 +206,29 @@ public class createHero{
             case "mago": vida=vida+rand.nextInt(2)+1;
             case "arqueiro": vida=vida+rand.nextInt(2)+1;
         }
+    }
+    public void addAtaque(int x){
+        ataque=ataque++;
+    }
+    public void addDefesa(int x){
+        defesa=defesa++;
+    }
+    public void addDestreza(int x){
+        destreza=destreza++;
+    }
+    public void addVitalidade(int x){
+        vitalidade=vitalidade+x;
+    }
+    public void addSabedoria(int x){
+        sabedoria=sabedoria+x;
+    }
+    public void addCarisma(int x){
+        carisma=carisma+x;
+    }
+    public void addPercepcao(int x){
+        percepcao=percepcao+x;
+    }
+    public void addVida(int x){
+        vida=vida+x;
     }
 }

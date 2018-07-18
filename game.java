@@ -6,6 +6,8 @@ public class game{
         
         createHero nHero = new createHero();
         
+        experience kill = new experience();
+        
         nHero.sexoDoPersonagem();
         
         nHero.nomeDoPersonagem();
@@ -13,12 +15,14 @@ public class game{
         nHero.classeDoPersonagem();
         
         System.out.print("\f");
-        
         ficha(nHero);
         
         firstHistory primeiraH = new firstHistory();
         
-        primeiraH.partOne(nHero);
+        primeiraH.partOne(nHero, kill);
+        
+        System.out.print("\f");
+        ficha(nHero);
     }
     public static void titulo(){
         System.out.println("\f============================================================================\n\n\n");

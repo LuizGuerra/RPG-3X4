@@ -1,0 +1,25 @@
+#BlueJ class context
+comment0.target=comando
+comment1.params=nHeroi
+comment1.target=comando(createHero)
+comment10.params=nHero
+comment10.target=int\ carisma(createHero)
+comment11.params=nHero
+comment11.target=int\ percepcao(createHero)
+comment2.params=
+comment2.target=void\ novoComando()
+comment3.params=comando
+comment3.target=void\ movement(java.lang.String)
+comment4.params=
+comment4.target=int\ rolld20()
+comment5.params=nHero
+comment5.target=int\ ataque(createHero)
+comment6.params=nHero
+comment6.target=int\ defesa(createHero)
+comment7.params=nHero
+comment7.target=int\ destreza(createHero)
+comment8.params=nHero
+comment8.target=int\ vitalidade(createHero)
+comment9.params=nHero
+comment9.target=int\ sabedoria(createHero)
+numComments=12

@@ -1,22 +1,24 @@
 public class experience{
     int lvl=0, exp=0;
-    public boolean killMonster(){
+    public void killMonster(createHero nHero){
         exp++;
         if(lvl<6){
-            if(exp==10){
+            if(exp==3){
                 lvl++;
                 exp=0;
-                return true;
+                nHero.lvlUp();
+                //return true;
             }
         }
         else{
-            if(exp==20){
+            if(exp==6){
                 lvl++;
                 exp=0;
-                return true;
+                nHero.lvlUp();
+                //return true;
             }
         }
-        return false;
+        //return false;
     }
     public int getLvl(){
         return lvl;
